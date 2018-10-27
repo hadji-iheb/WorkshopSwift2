@@ -40,3 +40,12 @@ var mathfunction : (Int , Int ) -> Int = somme
 
 
 
+
+
+
+
+/// Commit test
+
+func test (_ a : Int , _ b : Int ) -> Int {
+    return a*b
+}
