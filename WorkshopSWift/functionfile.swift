@@ -8,6 +8,13 @@
 
 import Foundation
 
+
+func SayHello(){
+
+    print ("hello")
+}
+
+
 // func 3edia
 func abderrahim (person : String ) -> String {
     return person
@@ -38,14 +45,3 @@ func somme(_ a : Int , _ b : Int ) -> Int  {
 }
 var mathfunction : (Int , Int ) -> Int = somme
 
-
-
-
-
-
-
-/// Commit test
-
-func test (_ a : Int , _ b : Int ) -> Int {
-    return a*b
-}
