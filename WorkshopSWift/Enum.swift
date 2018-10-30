@@ -27,5 +27,10 @@ enum Planet2: Int {
     case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune
 }
 
-
+enum PrinterError: Error {
+    
+    case outOfPaper
+    case noToner
+    case onFire
+}
 

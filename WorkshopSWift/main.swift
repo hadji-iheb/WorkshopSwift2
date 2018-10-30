@@ -45,3 +45,101 @@ default:
 
 let earthsOrder = Planet2.mars.rawValue
 print ("earth order : \(earthsOrder)")
+
+
+//
+
+//Enumerations 
+
+func sendUser(Id: Int, toPrinter Name: String) throws -> String {
+    if Name == "Never Has Toner" {
+        throw PrinterError.noToner
+    }
+    return "Job sent"
+}
+
+//
+//ERROR Handling
+
+do {
+    let printerResponse = try sendUser(Id: 1040, toPrinter: "Never Has Toner")
+    print(printerResponse)
+} catch {
+    print(error)
+}
+
+
+do {
+    let printerResponse = try sendUser(Id: 1440, toPrinter: "Gutenberg")
+    print("try")
+
+    print(printerResponse)
+} catch PrinterError.onFire {
+    print("catch1")
+
+    print("I'll just put this over here, with the rest of the fire.")
+} catch {
+    print("catch3")
+
+    print(error)
+}
+
+
+//Convert the result to optional
+//if func throws error ====> result = null
+
+let printerSuccess = try? sendUser(Id: 1884, toPrinter: "Mergenthaler")
+let printerFailure = try? sendUser(Id: 1885, toPrinter: "Never Has Toner") //=====> null result
+
+
+//
+
+//optionals
+
+let possibleString: String? = "An optional string."
+
+let forcedString: String = possibleString! // requires an exclamation mark
+
+let assumedString: String! = "An implicitly unwrapped optional string."
+
+let implicitString: String = assumedString // no need for an exclamation mark
+
+
+
+//
+
+//Forced Unwrapping
+
+var myString:String?
+
+myString = "Helloooooo"
+
+if myString != nil {
+
+    print( "optional string \(myString)")
+    print( "forced String \(myString!)" )
+
+} else {
+    print("myString has nil value")
+}
+
+//Automatic Unwrapping
+
+
+var myString2:String!
+myString2 = "Helloo hellooo"
+
+if myString2 != nil {
+    print(myString2)
+    print("assumed String \(myString2)")
+
+} else {
+    print("myString has nil value")
+}
+
+
+let convertedId = Int(user1.Id!)
+// convertedNumber is inferred to be of type "Int?", or "optional Int"
+if convertedId != nil {
+    print("convertedNumber contains some integer value.")
+}
